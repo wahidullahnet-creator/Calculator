@@ -1,183 +1,186 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   BODY
+=========================== */
+
 body{
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: hsl(0, 0%, 95%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+    background:hsl(0,0%,95%);
+    font-family:Arial, sans-serif;
 }
+
+/* ===========================
+   CALCULATOR
+=========================== */
+
 #calculator{
-    font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 15%);
-    border-radius: 15px;
-    max-width: 500px;
-    overflow: hidden;
- }
- #display{
-    width: 100%;
-    padding: 20px;
-    font-size: 5rem;
-    text-align: left;
-    border: none;
-    background-color: hsl(0, 0%, 20%);
-    color: white;
- }
- #keys{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 25px;
- }
- button{
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    border: none;
-    background-color: hsl(0, 0%, 30%);
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
- }
- button:hover{
-    background-color: hsl(0, 0%, 40%);
- }
- button:active{
-    background-color: hsl(0, 0%, 50%);
- }
- .operator-btn{
-    background-color: hsl(35, 100%, 55%);
- }
- .operator-btn:hover{
-    background-color: hsl(35, 100%, 65%);
- }
- .operator-btn:active{
-    background-color: hsl(35, 100%, 75%);
- }
-
- /* ==========================================
-   RESPONSIVE CALCULATOR
-   Add this at the bottom of style.css
-========================================== */
-
-/* Large Laptop */
-@media (max-width:1200px){
-
-    .calculator{
-        width:380px;
-    }
-
+    background:hsl(0,0%,15%);
+    border-radius:20px;
+    width:100%;
+    max-width:500px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
-/* Laptop */
-@media (max-width:992px){
+/* ===========================
+   DISPLAY
+=========================== */
 
-    .calculator{
-        width:360px;
-        padding:20px;
-    }
-
-    #display{
-        height:70px;
-        font-size:30px;
-    }
-
-    .buttons{
-        gap:12px;
-    }
-
-    .buttons button{
-        height:65px;
-        font-size:22px;
-    }
-
+#display{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:20px;
+    font-size:4rem;
+    text-align:right;
+    color:white;
+    background:hsl(0,0%,20%);
 }
 
-/* Tablet */
+/* ===========================
+   KEYS
+=========================== */
+
+#keys{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    padding:20px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button{
+    width:100%;
+    aspect-ratio:1/1;
+    border:none;
+    border-radius:50%;
+    background:hsl(0,0%,30%);
+    color:white;
+    font-size:2rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    background:hsl(0,0%,40%);
+}
+
+button:active{
+    background:hsl(0,0%,50%);
+}
+
+/* ===========================
+   OPERATOR BUTTONS
+=========================== */
+
+.operator-btn{
+    background:hsl(35,100%,55%);
+}
+
+.operator-btn:hover{
+    background:hsl(35,100%,65%);
+}
+
+.operator-btn:active{
+    background:hsl(35,100%,75%);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
 @media (max-width:768px){
 
     body{
-        padding:20px;
+        padding:15px;
     }
 
-    .calculator{
-        width:100%;
-        max-width:400px;
-        margin:auto;
-        padding:20px;
+    #calculator{
+        max-width:420px;
     }
 
     #display{
-        height:70px;
-        font-size:28px;
+        font-size:3rem;
+        padding:18px;
     }
 
-    .buttons{
-        display:grid;
-        grid-template-columns:repeat(4,1fr);
-        gap:12px;
+    #keys{
+        gap:10px;
+        padding:18px;
     }
 
-    .buttons button{
-        width:100%;
-        height:60px;
-        font-size:22px;
+    button{
+        font-size:1.8rem;
     }
 
 }
 
-/* Mobile */
+/* ===========================
+   MOBILE
+=========================== */
+
 @media (max-width:480px){
 
     body{
-        padding:15px;
-    }
-
-    .calculator{
-        width:100%;
-        max-width:100%;
-        padding:18px;
-        border-radius:20px;
-    }
-
-    #display{
-        height:65px;
-        font-size:24px;
         padding:10px;
     }
 
-    .buttons{
-        grid-template-columns:repeat(4,1fr);
-        gap:10px;
+    #calculator{
+        max-width:100%;
+        border-radius:15px;
     }
 
-    .buttons button{
-        height:55px;
-        font-size:20px;
-        border-radius:12px;
+    #display{
+        font-size:2.3rem;
+        padding:15px;
+    }
+
+    #keys{
+        gap:8px;
+        padding:15px;
+    }
+
+    button{
+        font-size:1.3rem;
     }
 
 }
 
-/* Small Mobile */
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
 @media (max-width:360px){
 
-    .calculator{
-        padding:15px;
-    }
-
     #display{
-        height:60px;
-        font-size:20px;
+        font-size:1.8rem;
+        padding:12px;
     }
 
-    .buttons{
-        gap:8px;
+    #keys{
+        gap:6px;
+        padding:10px;
     }
 
-    .buttons button{
-        height:48px;
-        font-size:18px;
+    button{
+        font-size:1.1rem;
     }
 
 }
